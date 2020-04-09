@@ -15,5 +15,10 @@ def show_user_profile(username):
 @app.route('/add/<numbers>')
 def add(numbers):
     # show the user profile for that user
-    numbers = numbers.split(',')
+    numbers = split_numbers(numbers)
     return 'Add {}'.format(int(numbers[0])+int(numbers[1]))
+
+
+def split_numbers(numbers):
+    numbers = numbers.split(',')
+    return numbers
